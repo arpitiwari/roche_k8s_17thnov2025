@@ -268,4 +268,49 @@ pod/ashupod111 replaced
 [ec2-user@ip-172-31-35-199 ashutoshh-common-apps]$ 
 
 ```
+### generating yaml/json file for k8s 
+
+```
+ 46  kubectl   run  pod1  --image nginx  --dry-run=client 
+   47  kubectl   run  pod1  --image nginx  --dry-run=client  -o yaml 
+   48  kubectl   run  pod1  --image nginx  --dry-run=client  -o json 
+   49  history 
+[ec2-user@ip-172-31-35-199 ~]$ 
+[ec2-user@ip-172-31-35-199 ~]$ 
+[ec2-user@ip-172-31-35-199 ~]$ kubectl   run  pod1  --image nginx  --dry-run=client  -o json  >a.json 
+[ec2-user@ip-172-31-35-199 ~]$ 
+[ec2-user@ip-172-31-35-199 ~]$ kubectl  create -f a.json 
+pod/pod1 created
+[ec2-user@ip-172-31-35-199 ~]$ kubectl  delete  -f a.json 
+pod "pod1" deleted from default namespace
+
+```
+### explain 
+
+```
+ 54  kubectl  explain  pod.apiVersion
+   55  kubectl  explain  pod.kind 
+   56  kubectl  explain  pod.metadata
+   57  kubectl  explain  pod.spec 
+   58  kubectl  explain  pod.spec.containers
+
+```
+### Deployment controller 
+
+<img src="dep1.png">
+
+### deployment
+
+```
+kubectl create -f  k8s-yamls/deploy1.yaml 
+deployment.apps/ashu-deploy created
+[ec2-user@ip-172-31-35-199 ashutoshh-common-apps]$ kubectl  get deployment 
+NAME             READY   UP-TO-DATE   AVAILABLE   AGE
+ashu-deploy      1/1     1            1           23s
+dev-deploy       1/1     1            1           14s
+rish-deploy      1/1     1            1           8s
+vinayak-deploy   1/1     1            1           13s
+[ec2-user@ip-172-31-35-199 ashutoshh-common-apps]$ 
+
+```
 
