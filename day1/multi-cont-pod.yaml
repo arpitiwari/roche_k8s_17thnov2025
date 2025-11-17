@@ -1,0 +1,14 @@
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: ashupod111
+spec:
+  containers:
+  - name: ashuc2 
+    image: nginx 
+    ports:
+    - containerPort: 80 
+  - name: ashuc1 
+    image: alpine 
+    tty: true 
+  

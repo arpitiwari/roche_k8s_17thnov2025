@@ -227,3 +227,45 @@ vinayakpod1      1/1     Running             0             9s
    23  kubectl  logs -f   ashupod1 
 
 ```
+
+### deleting pod 
+
+```
+kubectl delete pod  ashupod1 
+```
+### creating pod using yaml file 
+
+```
+ ls
+java-app  k8s-yamls  python-app  website-apps
+[ec2-user@ip-172-31-35-199 ashutoshh-common-apps]$ ls  k8s-yamls/
+ashu-pod1.yaml
+[ec2-user@ip-172-31-35-199 ashutoshh-common-apps]$ kubectl  create  -f k8s-yamls/ashu-pod1.yaml 
+pod/ashupod111 created
+[ec2-user@ip-172-31-35-199 ashutoshh-common-apps]$ kubectl get pods
+NAME             READY   STATUS             RESTARTS     AGE
+1-debasnan-pod   1/1     Running            0            19m
+arpitpod3        1/1     Running            0            18m
+ashupod111       1/1     Running            0            7s
+devpod1          0/1     CrashLoopBackOff   1 (6s ago)   10s
+harshpod1        1/1     Running            0            13m
+
+```
+### more commands 
+
+```
+  kubectl  get pods -o wide 
+   32  kubectl  get pods ashupod111  -o wide 
+   33  kubectl  get no
+
+```
+### replace 
+
+```
+kubectl  replace   -f k8s-yamls/ashu-pod1.yaml --force
+pod "ashupod111" deleted from default namespace
+pod/ashupod111 replaced
+[ec2-user@ip-172-31-35-199 ashutoshh-common-apps]$ 
+
+```
+
