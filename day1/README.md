@@ -40,3 +40,7 @@ Server:
   Built:            Mon Nov  3 00:00:00 2025
 
 ```
+### docker architecture 
+
+<img src="d_arch.png">
+
