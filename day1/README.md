@@ -194,3 +194,25 @@ The connection to the server localhost:8080 was refused - did you specify the ri
 
 
 ```
+
+## creating first pod 
+
+```
+kubectl  run  ashupod1  --image alpine --command ping 127.0.0.1 
+pod/ashupod1 created
+[ec2-user@ip-172-31-35-199 ashutoshh-common-apps]$ kubectl  get pods
+NAME             READY   STATUS              RESTARTS      AGE
+1-debasnan-pod   1/1     Running             0             5s
+arpitpod1        0/1     Completed           3 (29s ago)   53s
+ashishpod1       1/1     Running             0             11s
+ashupod1         1/1     Running             0             11s
+dasspod1         1/1     Running             0             6s
+devpod1          1/1     Running             0             9s
+gskpod1          1/1     Running             0             10s
+jivipod1         1/1     Running             0             10s
+mujpod1          1/1     Running             0             9s
+nitinpod1        0/1     ContainerCreating   0             1s
+salilpod1        1/1     Running             0             9s
+vinayakpod1      1/1     Running             0             9s
+
+```
