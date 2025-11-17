@@ -216,3 +216,14 @@ salilpod1        1/1     Running             0             9s
 vinayakpod1      1/1     Running             0             9s
 
 ```
+
+### more kubectl commands 
+
+```
+ 19  kubectl  get nodes
+   20  kubectl  get pods
+   21  kubectl  logs  ashupod1 
+   22  history 
+   23  kubectl  logs -f   ashupod1 
+
+```
