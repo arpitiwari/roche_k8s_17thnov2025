@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ashu-db
+  name: ashu-db # name of deployment 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashu-db
+  strategy: {}
+  template: # pod template 
+    metadata:
+      labels:
+        app: ashu-db
+    spec:
+      containers:
+      - image: mysql
+        name: mysql
+        ports:
+        - containerPort: 3306
+        resources: {}
+        env: # calling env from dockerfile to fill details 
+        - name: MYSQL_ROOT_PASSWORD
+          value: "HelloDb@12345"
+        - name: MYSQL_DATABASE
+          value: "ashu-db"
+status: {}
