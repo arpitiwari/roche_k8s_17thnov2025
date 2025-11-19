@@ -62,3 +62,33 @@ kubectl   create  secret   docker-registry  ashu-acr-creds --docker-username roc
 
 ```
 
+### creating 
+
+```
+kubectl apply -f acr-secret.yaml 
+secret/ashu-acr-creds created
+[ec2-user@ip-172-31-35-199 day3-deployments]$ kubectl  get secret
+NAME             TYPE                             DATA   AGE
+ashu-acr-creds   kubernetes.io/dockerconfigjson   1      7s
+[ec2-user@ip-172-31-35-199 day3-deployments]$ 
+
+```
+###
+
+```
+kubectl replace -f demo-pod.yaml --force  ^C
+[ec2-user@ip-172-31-35-199 day3-deployments]$ 
+[ec2-user@ip-172-31-35-199 day3-deployments]$ 
+[ec2-user@ip-172-31-35-199 day3-deployments]$ kubectl   get pods
+NAME       READY   STATUS              RESTARTS   AGE
+ashupod1   0/1     ContainerCreating   0          12s
+[ec2-user@ip-172-31-35-199 day3-deployments]$ 
+
+```
+
+### creating deployment with secret 
+
+```
+kubectl  create  deployment ashu-dep1  --image rocheashutoshh.azurecr.io/ashuwebapp:v1 --port 80       --dry-run=client -o yaml 
+
+```

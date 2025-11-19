@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ashu-dep1
+  name: ashu-dep1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashu-dep1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: ashu-dep1
+    spec:
+      imagePullSecrets: # calling secrets here 
+      - name: ashu-acr-creds
+      containers:
+      - image: rocheashutoshh.azurecr.io/ashuwebapp:v1
+        name: ashuwebapp
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
