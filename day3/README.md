@@ -26,3 +26,17 @@ docker build -t  rocheashutoshh.azurecr.io/ashuwebapp:v1  -f nginx.dockerfile .
  => CACHED [1/2] FROM docker.io/library/nginx:l
 
  ```
+ ### login to acr
+
+ ```
+ docker  login  rocheashutoshh.azurecr.io  -u  rocheashutoshh 
+Password: 
+WARNING! Your password will be stored unencrypted in /home/muj/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+
+===>
+ docker push  rocheashutoshh.azurecr.io/ashuwebapp:v1
+```
