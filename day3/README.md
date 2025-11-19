@@ -92,3 +92,9 @@ ashupod1   0/1     ContainerCreating   0          12s
 kubectl  create  deployment ashu-dep1  --image rocheashutoshh.azurecr.io/ashuwebapp:v1 --port 80       --dry-run=client -o yaml 
 
 ```
+
+### Ingress controller 
+
+<img src="ingress.png">
+
+
