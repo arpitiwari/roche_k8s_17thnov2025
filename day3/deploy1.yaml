@@ -23,4 +23,10 @@ spec:
         ports:
         - containerPort: 80
         resources: {}
+        readinessProbe: # to check if app is ready to serve traffic
+          httpGet:
+            path: /health.html 
+            port: 80 
+          initialDelaySeconds: 3 # after 3 seconds start health check process
+          periodSeconds: 5 # do it in every 5 seconds 
 status: {}
